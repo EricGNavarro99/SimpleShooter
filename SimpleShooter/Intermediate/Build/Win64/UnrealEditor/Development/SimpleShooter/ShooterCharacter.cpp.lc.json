@@ -1,0 +1,21 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\ericg\\onedrive\\documentos\\github\\simpleshooter\\simpleshooter\\source\\simpleshooter\\shootercharacter.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\ericg\\onedrive\\documentos\\github\\simpleshooter\\simpleshooter\\intermediate\\build\\win64\\simpleshootereditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\ericg\\onedrive\\documentos\\github\\simpleshooter\\simpleshooter\\intermediate\\build\\win64\\unrealeditor\\development\\simpleshooter\\definitions.simpleshooter.h",
+            "c:\\users\\ericg\\onedrive\\documentos\\github\\simpleshooter\\simpleshooter\\source\\simpleshooter\\shootercharacter.h",
+            "c:\\apps\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
+            "c:\\apps\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
+            "c:\\apps\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\charactermovementreplication.generated.h",
+            "c:\\apps\\epic games\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
+            "c:\\apps\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\rootmotionsource.generated.h",
+            "c:\\apps\\epic games\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\character.generated.h",
+            "c:\\users\\ericg\\onedrive\\documentos\\github\\simpleshooter\\simpleshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\simpleshooter\\shootercharacter.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
