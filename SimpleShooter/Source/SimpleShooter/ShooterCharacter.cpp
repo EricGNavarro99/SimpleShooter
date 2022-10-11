@@ -1,10 +1,13 @@
 // Created by Eric G. Navarro
 #include "ShooterCharacter.h"
+#include "GameFramework/SpringArmComponent.h"
+#include "Camera/CameraComponent.h"
 
 AShooterCharacter::AShooterCharacter()
 {
 	PrimaryActorTick.bCanEverTick = true;
 
+	CreateComponents();
 }
 
 void AShooterCharacter::BeginPlay()
@@ -32,6 +35,17 @@ void AShooterCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 	PlayerInputComponent->BindAxis(TEXT("LookRightRate"), this, &AShooterCharacter::LookRightRate);
 
 	PlayerInputComponent->BindAction(TEXT("Jump"), EInputEvent::IE_Pressed, this, &ACharacter::Jump);
+}
+
+void AShooterCharacter::CreateComponents()
+{
+	_springArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
+	_camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
+
+	_springArm->SetupAttachment(RootComponent);
+	_camera->SetupAttachment(_springArm, USpringArmComponent::SocketName);
+
+	_springArm->bUsePawnControlRotation = 1;
 }
 
 void AShooterCharacter::MoveForward(float axisValue)
