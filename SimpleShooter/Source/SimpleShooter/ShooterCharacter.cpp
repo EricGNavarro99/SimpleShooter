@@ -1,5 +1,4 @@
 // Created by Eric G. Navarro
-
 #include "ShooterCharacter.h"
 
 AShooterCharacter::AShooterCharacter()
@@ -29,6 +28,9 @@ void AShooterCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 	PlayerInputComponent->BindAxis(TEXT("LookUp"), this, &APawn::AddControllerPitchInput);
 	PlayerInputComponent->BindAxis(TEXT("LookRight"), this, &APawn::AddControllerYawInput);
 
+	PlayerInputComponent->BindAxis(TEXT("LookUpRate"), this, &AShooterCharacter::LookUpRate);
+	PlayerInputComponent->BindAxis(TEXT("LookRightRate"), this, &AShooterCharacter::LookRightRate);
+
 	PlayerInputComponent->BindAction(TEXT("Jump"), EInputEvent::IE_Pressed, this, &ACharacter::Jump);
 }
 
@@ -40,5 +42,15 @@ void AShooterCharacter::MoveForward(float axisValue)
 void AShooterCharacter::MoveRight(float axisValue)
 {
 	AddMovementInput(GetActorRightVector() * axisValue);
+}
+
+void AShooterCharacter::LookUpRate(float axisValue)
+{	
+	AddControllerPitchInput(axisValue * _gamepadSensivity * GetWorld()->GetDeltaSeconds());
+}
+
+void AShooterCharacter::LookRightRate(float axisValue)
+{
+	AddControllerYawInput(axisValue * _gamepadSensivity * GetWorld()->GetDeltaSeconds());
 }
 
