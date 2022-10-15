@@ -34,4 +34,8 @@ private:
 
 	UPROPERTY(EditAnywhere) float _gamepadSensivity = 70.f;
 
+	void CreateGun();
+	UPROPERTY(EditDefaultsOnly) TSubclassOf<class AGun> _gunClass = nullptr;
+	AGun* _gun = nullptr;
+
 };

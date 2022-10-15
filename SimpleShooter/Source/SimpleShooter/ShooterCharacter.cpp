@@ -2,6 +2,7 @@
 #include "ShooterCharacter.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "Gun.h"
 
 AShooterCharacter::AShooterCharacter()
 {
@@ -13,7 +14,8 @@ AShooterCharacter::AShooterCharacter()
 void AShooterCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	CreateGun();
 }
 
 void AShooterCharacter::Tick(float DeltaTime)
@@ -66,5 +68,17 @@ void AShooterCharacter::LookUpRate(float axisValue)
 void AShooterCharacter::LookRightRate(float axisValue)
 {
 	AddControllerYawInput(axisValue * _gamepadSensivity * GetWorld()->GetDeltaSeconds());
+}
+
+void AShooterCharacter::CreateGun()
+{
+	if (_gun == nullptr && _gunClass != nullptr)
+	{
+		_gun = GetWorld()->SpawnActor<AGun>(_gunClass);
+		GetMesh()->HideBoneByName(TEXT("weapon_r"), EPhysBodyOp::PBO_None);
+
+		_gun->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("WeaponSocket"));
+		_gun->SetOwner(this);
+	}
 }
 
