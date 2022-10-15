@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\ericg\\onedrive\\documentos\\github\\simpleshooter\\simpleshooter\\source\\simpleshooter\\gun.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\ericg\\onedrive\\documentos\\github\\simpleshooter\\simpleshooter\\intermediate\\build\\win64\\simpleshootereditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\ericg\\onedrive\\documentos\\github\\simpleshooter\\simpleshooter\\intermediate\\build\\win64\\unrealeditor\\development\\simpleshooter\\definitions.simpleshooter.h",
+            "c:\\users\\ericg\\onedrive\\documentos\\github\\simpleshooter\\simpleshooter\\source\\simpleshooter\\gun.h",
+            "c:\\users\\ericg\\onedrive\\documentos\\github\\simpleshooter\\simpleshooter\\intermediate\\build\\win64\\unrealeditor\\inc\\simpleshooter\\gun.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

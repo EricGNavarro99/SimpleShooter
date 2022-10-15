@@ -23,6 +23,9 @@
     <None Include="..\..\Config\DefaultGame.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
     <Filter Include="Config\HoloLens">
       <UniqueIdentifier>{4C8DD267-CDE7-336F-8602-F5F485D22BAB}</UniqueIdentifier>
     </Filter>
@@ -32,6 +35,12 @@
     <Filter Include="Source\SimpleShooter">
       <UniqueIdentifier>{398169F3-F75C-35FC-ADE5-1313B273635E}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\SimpleShooter\Gun.cpp">
+      <Filter>Source\SimpleShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SimpleShooter\Gun.h">
+      <Filter>Source\SimpleShooter</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\SimpleShooter\ShooterCharacter.cpp">
       <Filter>Source\SimpleShooter</Filter>
     </ClCompile>

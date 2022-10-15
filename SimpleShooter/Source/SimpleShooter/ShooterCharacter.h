@@ -24,8 +24,8 @@ public:
 
 private:
 	void CreateComponents();
-	UPROPERTY(EditAnywhere) class USpringArmComponent* _springArm;
-	UPROPERTY(EditAnywhere) class UCameraComponent* _camera;
+	UPROPERTY(VisibleAnywhere) class USpringArmComponent* _springArm;
+	UPROPERTY(VisibleAnywhere) class UCameraComponent* _camera;
 
 	void MoveForward(float axisValue);
 	void MoveRight(float axisValue);
