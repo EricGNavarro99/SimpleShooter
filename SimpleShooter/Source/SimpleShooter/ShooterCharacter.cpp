@@ -16,6 +16,8 @@ void AShooterCharacter::BeginPlay()
 	Super::BeginPlay();
 
 	CreateGun();
+
+	_currentHealth = _maxHealth;
 }
 
 void AShooterCharacter::Tick(float DeltaTime)
@@ -38,6 +40,18 @@ void AShooterCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 
 	PlayerInputComponent->BindAction(TEXT("Jump"), EInputEvent::IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction(TEXT("Shoot"), EInputEvent::IE_Pressed, this, &AShooterCharacter::ShotGun);
+}
+
+float AShooterCharacter::TakeDamage(float damageAmount, FDamageEvent const& damageEvent, AController* eventInstigator, AActor* damageCauser) 
+{
+	float damageToApplied = Super::TakeDamage(damageAmount, damageEvent, eventInstigator, damageCauser);	
+	damageToApplied = FMath::Min(_currentHealth, damageToApplied);
+
+	_currentHealth -= damageToApplied;
+
+	UE_LOG(LogTemp, Warning, TEXT("Current health > %f"), _currentHealth);
+
+	return damageToApplied;
 }
 
 void AShooterCharacter::CreateComponents()

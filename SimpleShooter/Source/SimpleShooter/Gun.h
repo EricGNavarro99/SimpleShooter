@@ -28,12 +28,16 @@ private:
 	UPROPERTY(VisibleAnywhere) USceneComponent* _root;
 	UPROPERTY(VisibleAnywhere) USkeletalMeshComponent* _skeletalMesh;
 
-	UPROPERTY(EditDefaultsOnly) UParticleSystem* _muzzleFlash;
-	UPROPERTY(EditDefaultsOnly) UParticleSystem* _impactEffect;
+	UPROPERTY(EditDefaultsOnly, Category = "Particles", meta = (Tooltip = "Particles of muzzle when the gun shoot.")) UParticleSystem* _muzzleFlash;
+	UPROPERTY(EditDefaultsOnly, Category = "Particles", meta = (Tooltip = "Particles when the bullet impacts.")) UParticleSystem* _impactEffect;
 
 	void SpawnShootEffect();
 	void SpawnBulletImpactEffect();
 
-	UPROPERTY(EditDefaultsOnly) float _maxRange = 10000.f;
+	UPROPERTY(EditDefaultsOnly, Category = "Bullet range", meta = (Tooltip = "Max distance that bullet can do.", ClampMin = "1000")) float _maxRange = 10000.f;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Damage") float _damage = 10.f;
+	void SetDamageToPlayer();
+	bool _canDamagePlayer = false;
 
 };

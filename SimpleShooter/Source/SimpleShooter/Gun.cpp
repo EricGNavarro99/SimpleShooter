@@ -13,9 +13,12 @@ AGun::AGun()
 
 void AGun::PullTrigger()
 {
-	SpawnShootEffect();
+	SpawnShootEffect();	
 	SpawnBulletImpactEffect();
 
+	SetDamageToPlayer();
+
+	_canDamagePlayer = false;
 }
 
 void AGun::BeginPlay()
@@ -51,10 +54,9 @@ void AGun::SpawnBulletImpactEffect()
 	if (_impactEffect == nullptr) return;
 
 	APawn* ownerPawn = Cast<APawn>(GetOwner());
-	if (ownerPawn == nullptr) return;
-
 	AController* ownerController = ownerPawn->GetController();
-	if (ownerController == nullptr) return;
+
+	if (ownerPawn == nullptr && ownerController == nullptr) return;
 
 	FVector location;
 	FRotator rotation;
@@ -69,6 +71,34 @@ void AGun::SpawnBulletImpactEffect()
 	{
 		FVector shotDirection = -rotation.Vector();
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), _impactEffect, hit.Location, shotDirection.Rotation());
+		
+		_canDamagePlayer = true;
+	}
+}
+
+void AGun::SetDamageToPlayer()
+{
+	APawn* ownerPawn = Cast<APawn>(GetOwner());
+	AController* ownerController = ownerPawn->GetController();
+
+	if (ownerPawn == nullptr && ownerController == nullptr) return;
+
+	FVector location;
+	FRotator rotation;
+	ownerController->GetPlayerViewPoint(location, rotation);
+
+	FVector end = location + rotation.Vector() * _maxRange;
+
+	FHitResult hit;
+	GetWorld()->LineTraceSingleByChannel(hit, location, end, ECollisionChannel::ECC_GameTraceChannel1);
+
+	if (_canDamagePlayer)
+	{
+		FVector shotDirection = -rotation.Vector();
+		FPointDamageEvent damageEvent(_damage, hit, shotDirection, nullptr);
+
+		AActor* hitActor = hit.GetActor();
+		if (hitActor != nullptr) hitActor->TakeDamage(_damage, damageEvent, ownerController, this);
 	}
 }
 

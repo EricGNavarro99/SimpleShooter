@@ -22,6 +22,8 @@ public:
 
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	virtual float TakeDamage(float damageAmount, struct FDamageEvent const& damageEvent, class AController* eventInstigator, AActor* damageCauser) override;
+
 private:
 	void CreateComponents();
 	UPROPERTY(VisibleAnywhere) class USpringArmComponent* _springArm;
@@ -32,12 +34,16 @@ private:
 	void LookUpRate(float axisValue);
 	void LookRightRate(float axisValue);
 
-	UPROPERTY(EditAnywhere) float _gamepadSensivity = 70.f;
+	UPROPERTY(EditAnywhere, Category = "Gamepad") float _gamepadSensivity = 70.f;
 
 	void CreateGun();
-	UPROPERTY(EditDefaultsOnly) TSubclassOf<class AGun> _gunClass = nullptr;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Gun") TSubclassOf<class AGun> _gunClass = nullptr;
 	AGun* _gun = nullptr;
 
 	void ShotGun();
+
+	UPROPERTY(EditDefaultsOnly, Category = "Health", meta = (ClampMin = "0")) float _maxHealth = 100.f;
+	UPROPERTY(VisibleAnywhere, Category = "Health", meta = (ClampMin = "0")) float _currentHealth;
 
 };

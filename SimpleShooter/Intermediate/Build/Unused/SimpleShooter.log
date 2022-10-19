@@ -1,0 +1,13 @@
+﻿  Using bundled DotNet SDK
+  Log file: C:\Users\ericg\AppData\Local\UnrealBuildTool\Log.txt
+  Using 'git status' to determine working set for adaptive non-unity build (C:\Users\ericg\OneDrive\Documentos\GitHub\SimpleShooter).
+  Building SimpleShooterEditor...
+  Using Visual Studio 2022 14.32.31332 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+  [Adaptive Build] Excluded from SimpleShooter unity file: Gun.cpp, ShooterCharacter.cpp
+  Determining max actions to execute in parallel (6 physical cores, 12 logical cores)
+    Executing up to 6 processes, one per physical core
+    Requested 1,5 GB free memory per action, 7,45 GB available: limiting max parallel actions to 4
+  Building 1 action with 1 process...
+  [1/1] WriteMetadata SimpleShooterEditor.target
+  Total time in Parallel executor: 0,35 seconds
+  Total execution time: 1,79 seconds
