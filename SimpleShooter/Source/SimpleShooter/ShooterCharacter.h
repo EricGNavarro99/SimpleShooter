@@ -38,4 +38,6 @@ private:
 	UPROPERTY(EditDefaultsOnly) TSubclassOf<class AGun> _gunClass = nullptr;
 	AGun* _gun = nullptr;
 
+	void ShotGun();
+
 };

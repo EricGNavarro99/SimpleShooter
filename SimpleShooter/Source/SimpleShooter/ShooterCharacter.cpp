@@ -37,6 +37,7 @@ void AShooterCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 	PlayerInputComponent->BindAxis(TEXT("LookRightRate"), this, &AShooterCharacter::LookRightRate);
 
 	PlayerInputComponent->BindAction(TEXT("Jump"), EInputEvent::IE_Pressed, this, &ACharacter::Jump);
+	PlayerInputComponent->BindAction(TEXT("Shoot"), EInputEvent::IE_Pressed, this, &AShooterCharacter::ShotGun);
 }
 
 void AShooterCharacter::CreateComponents()
@@ -75,10 +76,17 @@ void AShooterCharacter::CreateGun()
 	if (_gun == nullptr && _gunClass != nullptr)
 	{
 		_gun = GetWorld()->SpawnActor<AGun>(_gunClass);
+
 		GetMesh()->HideBoneByName(TEXT("weapon_r"), EPhysBodyOp::PBO_None);
 
 		_gun->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("WeaponSocket"));
+
 		_gun->SetOwner(this);
 	}
+}
+
+void AShooterCharacter::ShotGun()
+{
+	_gun->PullTrigger();
 }
 

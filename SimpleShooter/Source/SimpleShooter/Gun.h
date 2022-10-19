@@ -14,6 +14,8 @@ class SIMPLESHOOTER_API AGun : public AActor
 public:
 	AGun();
 
+	void PullTrigger();
+
 protected:
 	virtual void BeginPlay() override;
 
@@ -25,5 +27,13 @@ private:
 
 	UPROPERTY(VisibleAnywhere) USceneComponent* _root;
 	UPROPERTY(VisibleAnywhere) USkeletalMeshComponent* _skeletalMesh;
+
+	UPROPERTY(EditDefaultsOnly) UParticleSystem* _muzzleFlash;
+	UPROPERTY(EditDefaultsOnly) UParticleSystem* _impactEffect;
+
+	void SpawnShootEffect();
+	void SpawnBulletImpactEffect();
+
+	UPROPERTY(EditDefaultsOnly) float _maxRange = 10000.f;
 
 };
