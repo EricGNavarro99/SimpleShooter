@@ -41,11 +41,15 @@ void AGun::CreateComponents()
 
 void AGun::SpawnShootEffect()
 {
+	if (_muzzleFlash == nullptr || _skeletalMesh == nullptr) return;
+
 	UGameplayStatics::SpawnEmitterAttached(_muzzleFlash, _skeletalMesh, TEXT("MuzzleFlashSocket"));
 }
 
 void AGun::SpawnBulletImpactEffect()
 {
+	if (_impactEffect == nullptr) return;
+
 	APawn* ownerPawn = Cast<APawn>(GetOwner());
 	if (ownerPawn == nullptr) return;
 
