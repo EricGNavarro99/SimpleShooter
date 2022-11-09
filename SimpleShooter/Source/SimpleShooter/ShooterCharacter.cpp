@@ -54,6 +54,11 @@ float AShooterCharacter::TakeDamage(float damageAmount, FDamageEvent const& dama
 	return damageToApplied;
 }
 
+bool AShooterCharacter::isDead() const
+{
+	return _currentHealth <= 0.f ? true : false;
+}
+
 void AShooterCharacter::CreateComponents()
 {
 	_springArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));

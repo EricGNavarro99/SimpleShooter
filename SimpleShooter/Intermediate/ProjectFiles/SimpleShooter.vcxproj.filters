@@ -35,6 +35,12 @@
     <Filter Include="Source\SimpleShooter">
       <UniqueIdentifier>{398169F3-F75C-35FC-ADE5-1313B273635E}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\SimpleShooter\AIShooterCharacter.cpp">
+      <Filter>Source\SimpleShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SimpleShooter\AIShooterCharacter.h">
+      <Filter>Source\SimpleShooter</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\SimpleShooter\Gun.cpp">
       <Filter>Source\SimpleShooter</Filter>
     </ClCompile>

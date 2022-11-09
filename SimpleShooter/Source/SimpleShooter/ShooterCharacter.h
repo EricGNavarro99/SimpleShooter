@@ -24,6 +24,8 @@ public:
 
 	virtual float TakeDamage(float damageAmount, struct FDamageEvent const& damageEvent, class AController* eventInstigator, AActor* damageCauser) override;
 
+	UFUNCTION(BlueprintPure, Category = "Health") bool isDead() const;
+
 private:
 	void CreateComponents();
 	UPROPERTY(VisibleAnywhere) class USpringArmComponent* _springArm;
