@@ -49,8 +49,6 @@ float AShooterCharacter::TakeDamage(float damageAmount, FDamageEvent const& dama
 
 	_currentHealth -= damageToApplied;
 
-	UE_LOG(LogTemp, Warning, TEXT("Current health > %f"), _currentHealth);
-
 	return damageToApplied;
 }
 
@@ -108,4 +106,3 @@ void AShooterCharacter::ShotGun()
 {
 	_gun->PullTrigger();
 }
-

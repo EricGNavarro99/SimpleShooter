@@ -24,6 +24,8 @@ public:
 
 	virtual float TakeDamage(float damageAmount, struct FDamageEvent const& damageEvent, class AController* eventInstigator, AActor* damageCauser) override;
 
+	void ShotGun();
+
 	UFUNCTION(BlueprintPure, Category = "Health") bool isDead() const;
 
 private:
@@ -42,8 +44,6 @@ private:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Gun") TSubclassOf<class AGun> _gunClass = nullptr;
 	AGun* _gun = nullptr;
-
-	void ShotGun();
 
 	UPROPERTY(EditDefaultsOnly, Category = "Health", meta = (ClampMin = "0")) float _maxHealth = 100.f;
 	UPROPERTY(VisibleAnywhere, Category = "Health", meta = (ClampMin = "0")) float _currentHealth;

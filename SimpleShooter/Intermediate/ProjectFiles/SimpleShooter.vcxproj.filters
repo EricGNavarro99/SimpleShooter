@@ -41,6 +41,30 @@
     <ClInclude Include="..\..\Source\SimpleShooter\AIShooterCharacter.h">
       <Filter>Source\SimpleShooter</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\SimpleShooter\BTService_PlayerLocation.cpp">
+      <Filter>Source\SimpleShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SimpleShooter\BTService_PlayerLocation.h">
+      <Filter>Source\SimpleShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SimpleShooter\BTService_PlayerLocationIfSeen.cpp">
+      <Filter>Source\SimpleShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SimpleShooter\BTService_PlayerLocationIfSeen.h">
+      <Filter>Source\SimpleShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SimpleShooter\BTTask_ClearBlackboardValue.cpp">
+      <Filter>Source\SimpleShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SimpleShooter\BTTask_ClearBlackboardValue.h">
+      <Filter>Source\SimpleShooter</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SimpleShooter\BTTask_Shoot.cpp">
+      <Filter>Source\SimpleShooter</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SimpleShooter\BTTask_Shoot.h">
+      <Filter>Source\SimpleShooter</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\SimpleShooter\Gun.cpp">
       <Filter>Source\SimpleShooter</Filter>
     </ClCompile>
