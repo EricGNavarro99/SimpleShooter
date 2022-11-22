@@ -51,7 +51,7 @@ float AShooterCharacter::TakeDamage(float damageAmount, FDamageEvent const& dama
 
 	_currentHealth -= damageToApplied;
 
-	if (isDead())
+	if (IsDead())
 	{
 		ASimpleShooterGameModeBase* gameMode = GetWorld()->GetAuthGameMode<ASimpleShooterGameModeBase>();
 		if (gameMode != nullptr) gameMode->PawnKilled(this);
@@ -63,7 +63,7 @@ float AShooterCharacter::TakeDamage(float damageAmount, FDamageEvent const& dama
 	return damageToApplied;
 }
 
-bool AShooterCharacter::isDead() const
+bool AShooterCharacter::IsDead() const
 {
 	return _currentHealth <= 0.f ? true : false;
 }

@@ -26,7 +26,7 @@ public:
 
 	void ShotGun();
 
-	UFUNCTION(BlueprintPure, Category = "Health") bool isDead() const;
+	UFUNCTION(BlueprintPure, Category = "Health") bool IsDead() const;
 
 private:
 	void CreateComponents();

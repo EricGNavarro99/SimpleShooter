@@ -3,10 +3,19 @@
 #include "AIShooterCharacter.h"
 #include "Kismet/GameplayStatics.h"
 #include "BehaviorTree/BlackboardComponent.h"
+#include "ShooterCharacter.h"
 
 void AAIShooterCharacter::Tick(float deltaSeconds)
 {
 	Super::Tick(deltaSeconds);
+}
+
+bool AAIShooterCharacter::IsDead() const
+{
+	AShooterCharacter* controlledCharacter = Cast<AShooterCharacter>(GetPawn());
+	if (controlledCharacter != nullptr) return controlledCharacter->IsDead();
+
+	return true;
 }
 
 void AAIShooterCharacter::BeginPlay()

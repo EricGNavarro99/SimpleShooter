@@ -12,6 +12,7 @@ class SIMPLESHOOTER_API AAIShooterCharacter : public AAIController
 	GENERATED_BODY()
 public:
 	virtual void Tick(float deltaSeconds);
+	bool IsDead() const;
 
 protected:
 	virtual void BeginPlay() override;

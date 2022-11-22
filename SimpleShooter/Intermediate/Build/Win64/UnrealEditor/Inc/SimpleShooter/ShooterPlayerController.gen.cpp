@@ -13,6 +13,8 @@ void EmptyLinkFunctionForGeneratedCodeShooterPlayerController() {}
 	SIMPLESHOOTER_API UClass* Z_Construct_UClass_AShooterPlayerController();
 	ENGINE_API UClass* Z_Construct_UClass_APlayerController();
 	UPackage* Z_Construct_UPackage__Script_SimpleShooter();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 // End Cross Module References
 	void AShooterPlayerController::StaticRegisterNativesAShooterPlayerController()
 	{
@@ -28,6 +30,14 @@ void EmptyLinkFunctionForGeneratedCodeShooterPlayerController() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp__winScreenClass_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp__winScreenClass;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp__loseScreenClass_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp__loseScreenClass;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp__restartDelay_MetaData[];
 #endif
@@ -48,6 +58,20 @@ void EmptyLinkFunctionForGeneratedCodeShooterPlayerController() {}
 	};
 #endif
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShooterPlayerController_Statics::NewProp__winScreenClass_MetaData[] = {
+		{ "Category", "ShooterPlayerController" },
+		{ "ModuleRelativePath", "ShooterPlayerController.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AShooterPlayerController_Statics::NewProp__winScreenClass = { "_winScreenClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AShooterPlayerController, _winScreenClass), Z_Construct_UClass_UUserWidget_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_AShooterPlayerController_Statics::NewProp__winScreenClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AShooterPlayerController_Statics::NewProp__winScreenClass_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShooterPlayerController_Statics::NewProp__loseScreenClass_MetaData[] = {
+		{ "Category", "ShooterPlayerController" },
+		{ "ModuleRelativePath", "ShooterPlayerController.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AShooterPlayerController_Statics::NewProp__loseScreenClass = { "_loseScreenClass", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AShooterPlayerController, _loseScreenClass), Z_Construct_UClass_UUserWidget_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_AShooterPlayerController_Statics::NewProp__loseScreenClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AShooterPlayerController_Statics::NewProp__loseScreenClass_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AShooterPlayerController_Statics::NewProp__restartDelay_MetaData[] = {
 		{ "Category", "ShooterPlayerController" },
 		{ "ModuleRelativePath", "ShooterPlayerController.h" },
@@ -55,6 +79,8 @@ void EmptyLinkFunctionForGeneratedCodeShooterPlayerController() {}
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AShooterPlayerController_Statics::NewProp__restartDelay = { "_restartDelay", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AShooterPlayerController, _restartDelay), METADATA_PARAMS(Z_Construct_UClass_AShooterPlayerController_Statics::NewProp__restartDelay_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AShooterPlayerController_Statics::NewProp__restartDelay_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AShooterPlayerController_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShooterPlayerController_Statics::NewProp__winScreenClass,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShooterPlayerController_Statics::NewProp__loseScreenClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AShooterPlayerController_Statics::NewProp__restartDelay,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AShooterPlayerController_Statics::StaticCppClassTypeInfo = {
@@ -93,9 +119,9 @@ void EmptyLinkFunctionForGeneratedCodeShooterPlayerController() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SimpleShooter_Source_SimpleShooter_ShooterPlayerController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AShooterPlayerController, AShooterPlayerController::StaticClass, TEXT("AShooterPlayerController"), &Z_Registration_Info_UClass_AShooterPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AShooterPlayerController), 3008091914U) },
+		{ Z_Construct_UClass_AShooterPlayerController, AShooterPlayerController::StaticClass, TEXT("AShooterPlayerController"), &Z_Registration_Info_UClass_AShooterPlayerController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AShooterPlayerController), 3089530958U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SimpleShooter_Source_SimpleShooter_ShooterPlayerController_h_1575807805(TEXT("/Script/SimpleShooter"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SimpleShooter_Source_SimpleShooter_ShooterPlayerController_h_1336304688(TEXT("/Script/SimpleShooter"),
 		Z_CompiledInDeferFile_FID_SimpleShooter_Source_SimpleShooter_ShooterPlayerController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_SimpleShooter_Source_SimpleShooter_ShooterPlayerController_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

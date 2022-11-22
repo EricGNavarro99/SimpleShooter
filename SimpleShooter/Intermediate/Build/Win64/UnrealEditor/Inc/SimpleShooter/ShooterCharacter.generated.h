@@ -16,12 +16,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_SimpleShooter_Source_SimpleShooter_ShooterCharacter_h_12_SPARSE_DATA
 #define FID_SimpleShooter_Source_SimpleShooter_ShooterCharacter_h_12_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execisDead);
+	DECLARE_FUNCTION(execIsDead);
 
 
 #define FID_SimpleShooter_Source_SimpleShooter_ShooterCharacter_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execisDead);
+	DECLARE_FUNCTION(execIsDead);
 
 
 #define FID_SimpleShooter_Source_SimpleShooter_ShooterCharacter_h_12_INCLASS_NO_PURE_DECLS \
