@@ -2,7 +2,9 @@
 #include "ShooterCharacter.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "Gun.h"
+#include "SimpleShooterGameModeBase.h"
 
 AShooterCharacter::AShooterCharacter()
 {
@@ -48,6 +50,15 @@ float AShooterCharacter::TakeDamage(float damageAmount, FDamageEvent const& dama
 	damageToApplied = FMath::Min(_currentHealth, damageToApplied);
 
 	_currentHealth -= damageToApplied;
+
+	if (isDead())
+	{
+		ASimpleShooterGameModeBase* gameMode = GetWorld()->GetAuthGameMode<ASimpleShooterGameModeBase>();
+		if (gameMode != nullptr) gameMode->PawnKilled(this);
+
+		DetachFromControllerPendingDestroy();
+		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	}
 
 	return damageToApplied;
 }

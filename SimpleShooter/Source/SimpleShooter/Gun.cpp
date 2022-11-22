@@ -90,7 +90,11 @@ void AGun::SetDamageToPlayer()
 	FVector end = location + rotation.Vector() * _maxRange;
 
 	FHitResult hit;
-	GetWorld()->LineTraceSingleByChannel(hit, location, end, ECollisionChannel::ECC_GameTraceChannel1);
+	FCollisionQueryParams params;
+	params.AddIgnoredActor(this);
+	params.AddIgnoredActor(GetOwner());
+
+	GetWorld()->LineTraceSingleByChannel(hit, location, end, ECollisionChannel::ECC_GameTraceChannel1, params);
 
 	if (_canDamagePlayer)
 	{

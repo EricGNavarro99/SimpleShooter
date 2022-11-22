@@ -37,7 +37,7 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Bullet range", meta = (Tooltip = "Max distance that bullet can do.", ClampMin = "1000")) float _maxRange = 10000.f;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Damage") float _damage = 10.f;
+
 	void SetDamageToPlayer();
 	bool _canDamagePlayer = false;
-
 };
