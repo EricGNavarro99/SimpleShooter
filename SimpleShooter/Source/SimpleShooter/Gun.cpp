@@ -93,8 +93,11 @@ bool AGun::GunTrace(FHitResult& hit, FVector& shotDirection)
 	shotDirection = -rotation.Vector();
 
 	FVector end = location + rotation.Vector() * _maxRange;
+	FCollisionQueryParams params;
+	params.AddIgnoredActor(this);
+	params.AddIgnoredActor(GetOwner());
 
-	return GetWorld()->LineTraceSingleByChannel(hit, location, end, ECollisionChannel::ECC_GameTraceChannel1);
+	return GetWorld()->LineTraceSingleByChannel(hit, location, end, ECollisionChannel::ECC_GameTraceChannel1, params);
 }
 
 AController* AGun::GetOwnerController() const

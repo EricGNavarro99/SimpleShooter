@@ -1,7 +1,9 @@
 // Created by Eric G. Navarro
+
 #include "ShooterCharacter.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "Camera/PlayerCameraManager.h"
 #include "Components/CapsuleComponent.h"
 #include "Gun.h"
 #include "SimpleShooterGameModeBase.h"
@@ -18,6 +20,7 @@ void AShooterCharacter::BeginPlay()
 	Super::BeginPlay();
 
 	CreateGun();
+	BlockCamera();
 
 	_currentHealth = _maxHealth;
 }
@@ -68,6 +71,11 @@ bool AShooterCharacter::IsDead() const
 	return _currentHealth <= 0.f ? true : false;
 }
 
+float AShooterCharacter::GetHealthPercent() const
+{
+	return _currentHealth / _maxHealth;
+}
+
 void AShooterCharacter::CreateComponents()
 {
 	_springArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
@@ -77,6 +85,11 @@ void AShooterCharacter::CreateComponents()
 	_camera->SetupAttachment(_springArm, USpringArmComponent::SocketName);
 
 	_springArm->bUsePawnControlRotation = 1;
+}
+
+void AShooterCharacter::BlockCamera()
+{
+	// https://docs.unrealengine.com/4.27/en-US/API/Runtime/Engine/Camera/APlayerCameraManager/LimitViewPitch/
 }
 
 void AShooterCharacter::MoveForward(float axisValue)
@@ -90,7 +103,7 @@ void AShooterCharacter::MoveRight(float axisValue)
 }
 
 void AShooterCharacter::LookUpRate(float axisValue)
-{	
+{
 	AddControllerPitchInput(axisValue * _gamepadSensivity * GetWorld()->GetDeltaSeconds());
 }
 

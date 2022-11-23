@@ -28,10 +28,14 @@ public:
 
 	UFUNCTION(BlueprintPure, Category = "Health") bool IsDead() const;
 
+	UFUNCTION(BlueprintPure, Category = "Health") float GetHealthPercent() const;
+
 private:
 	void CreateComponents();
 	UPROPERTY(VisibleAnywhere) class USpringArmComponent* _springArm;
 	UPROPERTY(VisibleAnywhere) class UCameraComponent* _camera;
+
+	void BlockCamera();
 
 	void MoveForward(float axisValue);
 	void MoveRight(float axisValue);
