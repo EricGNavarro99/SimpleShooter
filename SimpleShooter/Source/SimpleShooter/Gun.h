@@ -16,12 +16,6 @@ public:
 
 	void PullTrigger();
 
-protected:
-	virtual void BeginPlay() override;
-
-public:
-	virtual void Tick(float DeltaTime) override;
-
 private:
 	void CreateComponents();
 
@@ -40,4 +34,12 @@ private:
 
 	void SetDamageToPlayer();
 	bool _canDamagePlayer = false;
+
+	bool GunTrace(FHitResult &hit, FVector &shotDirection);
+
+	AController* GetOwnerController() const;
+
+	UPROPERTY(EditAnywhere, Category = "Sound") USoundBase* _muzzleSound;
+	UPROPERTY(EditAnywhere, Category = "Sound") USoundBase* _impactSound;
+
 };
