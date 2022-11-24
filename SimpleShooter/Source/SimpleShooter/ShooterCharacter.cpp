@@ -89,7 +89,12 @@ void AShooterCharacter::CreateComponents()
 
 void AShooterCharacter::BlockCamera()
 {
-	// https://docs.unrealengine.com/4.27/en-US/API/Runtime/Engine/Camera/APlayerCameraManager/LimitViewPitch/
+	APlayerController* playerController = Cast<APlayerController>(Controller);
+	if (playerController != nullptr && playerController->PlayerCameraManager)
+	{
+		playerController->PlayerCameraManager->ViewPitchMax = _cameraMaxPitchRotation;
+		playerController->PlayerCameraManager->ViewPitchMin = _cameraMinPitchRotation;
+	}
 }
 
 void AShooterCharacter::MoveForward(float axisValue)

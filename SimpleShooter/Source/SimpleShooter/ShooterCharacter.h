@@ -27,7 +27,6 @@ public:
 	void ShotGun();
 
 	UFUNCTION(BlueprintPure, Category = "Health") bool IsDead() const;
-
 	UFUNCTION(BlueprintPure, Category = "Health") float GetHealthPercent() const;
 
 private:
@@ -43,6 +42,9 @@ private:
 	void LookRightRate(float axisValue);
 
 	UPROPERTY(EditAnywhere, Category = "Gamepad") float _gamepadSensivity = 70.f;
+
+	UPROPERTY(EditAnywhere, Category = "Camera", meta = (ClampMin = "-100", ClampMax = "0")) float _cameraMinPitchRotation = -24.f;
+	UPROPERTY(EditAnywhere, Category = "Camera", meta = (ClampMin = "0", ClampMax = "100")) float _cameraMaxPitchRotation = 50.f;
 
 	void CreateGun();
 
